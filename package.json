@@ -1,0 +1,32 @@
+{
+  "name": "vscode-tflint",
+  "version": "0.0.0",
+  "description": "A TypeScript project.",
+  "homepage": "https://github.com/Zamiell/vscode-tflint",
+  "bugs": {
+    "url": "https://github.com/Zamiell/vscode-tflint/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zamiell/vscode-tflint.git"
+  },
+  "license": "GPL-3.0",
+  "author": "Zamiell",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "bun run ./scripts/build.ts",
+    "lint": "bun run ./scripts/lint.ts",
+    "publish": "complete-cli publish",
+    "start": "bun run ./src/main.ts",
+    "update": "complete-cli update"
+  },
+  "devDependencies": {
+    "complete-cli": "1.5.21",
+    "complete-lint": "5.8.4",
+    "complete-node": "16.4.0",
+    "typescript": "6.0.3"
+  }
+}

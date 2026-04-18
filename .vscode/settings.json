@@ -1,0 +1,131 @@
+// These are Visual Studio Code settings that should apply to this particular repository.
+{
+  // ----------------
+  // Vanilla settings
+  // ----------------
+
+  // This matches the Airbnb JavaScript style guide.
+  "editor.rulers": [100],
+  "editor.tabSize": 2,
+
+  "files.associations": {
+    ".env*": "shellscript", // e.g. ".env.example" is the same as ".env".
+  },
+
+  // Always use "lf" to be consistent with all platforms.
+  "files.eol": "\n",
+
+  // Automatically insert a trailing newline when saving a file to match the POSIX standard.
+  "files.insertFinalNewline": true,
+
+  // Automatically remove all trailing whitespace when saving a file.
+  "files.trimTrailingWhitespace": true,
+
+  // Allow custom schemas hosted on GitHub.
+  "json.schemaDownload.trustedDomains": {
+    "https://raw.githubusercontent.com/": true,
+  },
+
+  // Configure glob patterns for excluding files and folders in full text searches and quick open.
+  "search.exclude": {
+    "**/*.mp3": true,
+    "**/*.png": true,
+    "**/*.svg": true,
+    "**/*.wav": true,
+    "**/.yarn/": true,
+    "**/dist/": true,
+    "**/node_modules/": true,
+    "bun.lock": true,
+    "LICENSE": true,
+    "package-lock.json": true,
+    "pnpm-lock.yaml": true,
+    "yarn.lock": true,
+  },
+
+  // ------------------
+  // Extension settings
+  // ------------------
+
+  // Use Prettier to format "cspell.config.jsonc".
+  "cSpell.autoFormatConfigFile": true,
+
+  // Change all ESLint errors to have yellow squigglies instead of red squigglies.
+  // https://www.joshuakgoldberg.com/blog/if-i-wrote-a-linter-part-2-developer-experience/#only-errors
+  "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+
+  // -----------------
+  // Language settings
+  // -----------------
+
+  // By default, Visual Studio Code will not automatically fill-in function arguments.
+  "js/ts.suggest.completeFunctionCalls": true,
+
+  // By default, Visual Studio Code will prefer non-relative paths for deeply nested files.
+  "js/ts.preferences.importModuleSpecifier": "project-relative",
+
+  // By default, Visual Studio Code will not add `import type` automatically.
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+
+  // Show TypeScript errors for files that don't happen to be currently open, which makes TypeScript
+  // work similar to other compiled languages like Golang or Rust.
+  "js/ts.tsserver.experimental.enableProjectDiagnostics": true,
+
+  // Automatically run the formatter when certain files are saved. We intentionally do not group
+  // languages together because of this bug: https://github.com/microsoft/vscode/issues/168411
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[javascriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[postcss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+  },
+}
