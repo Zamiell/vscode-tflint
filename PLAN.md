@@ -8,7 +8,7 @@ Turn this TypeScript/Bun project into a VS Code extension that shows yellow squi
 
 Six modules with clear single responsibilities, bundled by esbuild into one CJS file:
 
-```
+```txt
 src/
   main.ts          ← activate/deactivate, wires everything together
   config.ts        ← typed getConfiguration wrapper
@@ -160,7 +160,6 @@ type LintResult =
 ```
 
 > **Pitfall — `--chdir` flag:** Only available in tflint ≥0.47.0 (released 2023). Document the minimum version requirement.
-
 > **Pitfall — Windows paths:** Always pass `env: process.env` to `spawn` so PATH resolves correctly on Windows.
 
 ---
@@ -179,7 +178,6 @@ Maps tflint issues to `vscode.Diagnostic[]`.
 Returns `Map<string /* absolute file path */, vscode.Diagnostic[]>`.
 
 > **Pitfall — stale diagnostics:** After a user fixes all issues in a file, tflint returns zero issues for it. The diagnostic collection must be explicitly cleared for that file, or old squiggles persist.
-
 > **Pitfall — Windows path separators:** Normalize all file paths before using as Map keys to avoid `\` vs `/` mismatches.
 
 ---
