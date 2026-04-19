@@ -1,7 +1,11 @@
 {
   "name": "vscode-tflint",
-  "version": "0.0.0",
-  "description": "A TypeScript project.",
+  "displayName": "tflint",
+  "version": "0.0.1",
+  "description": "Terraform linter (tflint) integration for Visual Studio Code.",
+  "categories": [
+    "Linters"
+  ],
   "homepage": "https://github.com/Zamiell/vscode-tflint",
   "bugs": {
     "url": "https://github.com/Zamiell/vscode-tflint/issues"
@@ -12,21 +16,78 @@
   },
   "license": "GPL-3.0",
   "author": "Zamiell",
+  "publisher": "Zamiell",
   "type": "module",
+  "main": "./dist/main.cjs",
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "bun run ./scripts/build.ts",
+    "deploy": "vsce publish",
     "lint": "bun run ./scripts/lint.ts",
+    "package": "vsce package",
     "publish": "complete-cli publish",
     "start": "bun run ./src/main.ts",
     "update": "complete-cli update"
   },
+  "contributes": {
+    "commands": [
+      {
+        "command": "tflint.run",
+        "title": "tflint: Run tflint on Workspace"
+      }
+    ],
+    "configuration": {
+      "title": "tflint",
+      "properties": {
+        "tflint.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable or disable tflint diagnostics."
+        },
+        "tflint.executablePath": {
+          "type": "string",
+          "default": "tflint",
+          "description": "Path to the tflint executable. Defaults to 'tflint' (resolved from PATH)."
+        },
+        "tflint.extraArgs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Additional arguments to pass to tflint (e.g. [\"--module\"])."
+        },
+        "tflint.runOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run tflint automatically when a .tf file is saved."
+        },
+        "tflint.runOnOpen": {
+          "type": "boolean",
+          "default": true,
+          "description": "Run tflint automatically when a .tf file is opened."
+        }
+      }
+    }
+  },
+  "activationEvents": [
+    "onLanguage:terraform"
+  ],
   "devDependencies": {
+    "@types/vscode": "1.85.0",
+    "@vscode/vsce": "^3.0.0",
     "complete-cli": "1.5.21",
     "complete-lint": "5.8.4",
     "complete-node": "16.4.0",
+    "esbuild": "^0.25.0",
     "typescript": "6.0.3"
+  },
+  "peerDependencies": {
+    "vscode": "*"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
   }
 }

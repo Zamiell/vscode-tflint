@@ -21,5 +21,15 @@
     "pnpm-lock.yaml",
     "yarn.lock",
   ],
-  "words": ["dbaeumer", "sarisia", "Zamiell"],
+  "words": [
+    "bunfig",
+    "chdir",
+    "dbaeumer",
+    "esbenp",
+    "knip",
+    "sarisia",
+    "tflint",
+    "vscodeignore",
+    "Zamiell",
+  ],
 }

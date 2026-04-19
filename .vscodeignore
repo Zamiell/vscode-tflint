@@ -1,0 +1,15 @@
+.vscode/**
+.github/**
+scripts/**
+src/**
+node_modules/**
+.eslintignore
+eslint.config.*
+knip.config.*
+prettier.config.*
+cspell.config.*
+tsconfig*.json
+bun.lock
+bunfig.toml
+PLAN.md
+README.md
