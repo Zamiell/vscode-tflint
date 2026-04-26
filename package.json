@@ -1,6 +1,5 @@
 {
   "name": "vscode-tflint",
-  "displayName": "tflint",
   "version": "0.0.1",
   "description": "Terraform linter (tflint) integration for Visual Studio Code.",
   "categories": [
@@ -14,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Zamiell/vscode-tflint.git"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "author": "Zamiell",
   "publisher": "Zamiell",
   "type": "module",
